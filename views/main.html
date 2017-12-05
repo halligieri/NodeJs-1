@@ -1,0 +1,51 @@
+{%extends 'layout.html'%}
+
+{%block titulo%}
+Galería de Imágenes
+{%endblock%}
+
+{%block mainApp%}
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>                        
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">                    
+                <li class="active"><a href="/main">Galería de Imágenes</a></li>
+                <li><a href="/upload">Cargar imágenes</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <span>Usuario: {{usuario}}</span>
+                    </a>                        
+                </li>                      
+                <li>
+                    <a href="/">
+                        <span class="glyphicon glyphicon-log-in"></span> Cerrar Sesión
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron">
+    <form role="form" method="POST" action="/edit">
+        <div class="container text-center">
+            {%for imagen in imagenes%}
+            <div class="gallery" style="cursor: pointer;" data-toggle="tooltip" title="Haga clic para editar esta imágen.">
+                <img src="{{imagen}}" width="300" height="200" onclick="$('#idImagen').val('{{imagen}}');document.forms[0].submit();">
+            </div>
+            {%endfor%}
+        </div>
+        <input type="hidden" id="idImagen" name="idImagen">
+    </form>
+</div>
+{%endblock%}

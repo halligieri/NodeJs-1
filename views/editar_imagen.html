@@ -1,0 +1,53 @@
+{%extends 'layout.html'%}
+
+{%block titulo%}
+Edición de Imágenes
+{%endblock%}
+
+{%block editarImagen%}
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>                        
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">                    
+                <li><a href="/main">Galería de Imágenes</a></li>
+                <li><a href="/upload">Cargar imágenes</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <span>Usuario: {{usuario}}</span>
+                    </a>                        
+                </li>                      
+                <li>
+                    <a href="/">
+                        <span class="glyphicon glyphicon-log-in"></span> Cerrar Sesión
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron">
+    <input type="hidden" value="{{idImagen}}" id="idEditImage">
+    <div class="container text-center">
+        <div class="wrapper">
+            <canvas id="canvas" width="500" height="300"></canvas> 
+            <div class="controls">
+                <div class="form-group">
+                    <input type="color" />                    
+                    <input type="range" min="1" max="60" value="5"/> 
+                </div>
+            </div>
+        </div>                  
+    </div>
+</div>
+{%endblock%}

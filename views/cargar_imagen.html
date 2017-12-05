@@ -1,0 +1,59 @@
+{%extends 'layout.html'%}
+
+{%block titulo%}
+Subir Imágen
+{%endblock%}
+
+{%block cargarImagen%}
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>                        
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">                    
+                <li><a href="/main">Galería de Imágenes</a></li>
+                <li class="active"><a href="/upload">Cargar imágenes</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <span>Usuario: {{usuario}}</span>
+                    </a>                        
+                </li>                      
+                <li>
+                    <a href="/">
+                        <span class="glyphicon glyphicon-log-in"></span> Cerrar Sesión
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron">
+    <div class="row clearfix">
+        <div class="col-md-4 column">
+        </div>
+        <div class="col-md-4 column">
+            <div class="container text-center">
+                <form id="frmUpload" role="form" method="POST" action="/uploadFile" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="inpUpload">Cargar imágen</label>
+                        <input type="file" id="inpUpload" name="inpUpload" required="">
+                        <br>
+                        <input type="submit" value="Enviar" id="inpEnviarImagen" name="inpEnviarImagen" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4 column">
+        </div>            
+    </div>
+</div>
+{%endblock%}

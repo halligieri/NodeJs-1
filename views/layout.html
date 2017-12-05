@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aplicacion de Dibujo Online</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="autor" content="Luis Hereñu" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Aplicacion de Dibujo Online" />
+        <!------------------------------------------------------------------->
+        <link rel="stylesheet" type="text/css" href="../../css/style.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap-3.3.7/css/bootstrap.min.css">
+        <!------------------------------------------------------------------->
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="js/jquery-3.2.0.js"></script>
+        <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
+    </head>
+    <!--BODY----------------------------------------------------------------->
+    <body>
+        <div class="container">
+            <div class="row clearfix">
+                <div class="col-md-12 column">
+                    <h2 class="text-center">
+                        {%block titulo%}
+                        {%endblock%}
+                    </h2>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-4 column">
+                </div>
+                <div class="col-md-4 column">
+                    {%block login%}
+                    {%endblock%}
+                </div>
+                <div class="col-md-4 column">
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-4 column">
+                </div>
+                <div class="col-md-4 column">
+                    {%block crearUsuario%}
+                    {%endblock%}
+                </div>
+                <div class="col-md-4 column">
+                </div>
+            </div>
+            {%block mainApp%}
+            {%endblock%}
+            {%block editarImagen%}
+            {%endblock%}
+            {%block cargarImagen%}
+            {%endblock%}
+            <br>
+            <br>
+            <footer class="container-fluid text-center">
+              <p>Ferrari App Store</p>
+            </footer>
+
+        </div>
+        <script type="text/javascript" src="../../js/index.js"></script>
+    </body>
+</html>
